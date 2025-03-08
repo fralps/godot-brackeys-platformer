@@ -1,10 +1,16 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
+@onready var death_sound: AudioStreamPlayer2D = $"../DeathSound"
 
 func _on_body_entered(body: Node2D) -> void:
 	print('You died!')
 	Engine.time_scale = 0.5
+	
+	# Play death sound only on enmeies
+	if death_sound:
+		death_sound.play()
+
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
 

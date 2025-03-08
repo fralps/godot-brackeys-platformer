@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs1lbkkv6ufux"]
+[gd_scene load_steps=11 format=3 uid="uid://bs1lbkkv6ufux"]
 
 [ext_resource type="Script" uid="uid://c76ghf47nht6p" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://cbb61gxquulfn" path="res://assets/sprites/slime_green.png" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://dvq77cbsfxexa" path="res://scenes/killzone.tscn" id="2_n6pvg"]
+[ext_resource type="AudioStream" uid="uid://ckauxnfljmk5a" path="res://assets/sounds/explosion.wav" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
 atlas = ExtResource("1_p2gj0")
@@ -66,3 +67,7 @@ target_position = Vector2(7, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 4)
 target_position = Vector2(-7, 0)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pjw23")
+bus = &"SFX"

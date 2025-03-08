@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -300.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var run_sound: AudioStreamPlayer2D = $RunSound
+@onready var timer: Timer = $Timer
 
 
 func _physics_process(delta: float) -> void:
